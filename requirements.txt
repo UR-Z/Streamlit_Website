@@ -1,0 +1,7 @@
+langchain_community
+langchain
+streamlit_chat
+streamlit
+python-dotenv
+boto3
+python-docx

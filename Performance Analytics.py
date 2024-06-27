@@ -13,6 +13,7 @@ import json
 import boto3
 import os
 from dotenv import load_dotenv
+from harsh import *
 
 
 
@@ -21,14 +22,6 @@ load_dotenv('../env.env')
 st.set_page_config(layout='wide')
 
 # Define page functions
-def service():
-    st.markdown("<h1 style='text-align: center; color: Black;'>Service</h1>", unsafe_allow_html=True)
-    st.markdown("<h1 style='text-align: left; color: Black;'>Tech Manual</h1>", unsafe_allow_html=True)
-    st.image('UR_Logo.jpg')
-    st.write('overview...')
-
-    st.write('video demo...')
-    st.write('link...')
 
 def sales():
     st.markdown("<h1 style='text-align: center; color: Black;'>Sales</h1>", unsafe_allow_html=True)
@@ -122,13 +115,21 @@ if navigation == "Main":
     
     # INTRO
     st.write('**Intro**')
-    st.write("""    The Performance Analytics department is at the forefront of driving digital innovation within the organization. The team specializes in leveraging advanced analytics and cutting-edge generative AI technologies to uncover valuable insights and create transformative solutions.
-             
-By harnessing the power of data and AI, the Performance Analytics department enables the organization to make informed, data-driven decisions and stay ahead of the curve in an increasingly competitive landscape. Their expertise in advanced analytics allows them to identify patterns, predict trends, and optimize processes, leading to improved efficiency and performance across various business functions.
+    st.write(""" The Performance Analytics department is at the forefront of driving digital innovation within our organization. Our team specializes in leveraging advanced analytics and cutting-edge generative AI technologies to uncover valuable insights and create transformative solutions.
+
+By harnessing the power of data and AI, the Performance Analytics department empowers the organization to make informed, data-driven decisions, helping us stay ahead in an increasingly competitive landscape. Our expertise in advanced analytics allows us to identify patterns, predict trends, and optimize processes, leading to improved efficiency and performance across various business functions.
+
+In addition to our analytics capabilities, we support internal users with their analytic work and tools such as Excel and Tableau. We are happy to provide training to help improve skills and automate tasks, ensuring our team can work more efficiently and effectively.
+
+On the bottom of this page you can try our secure and private LLM running on AWS Bedrock. On the left you can see some demos of current and pasts projects.
 """)
+    zach = "mailto:zchan@ur.com"
+    michel = "mailto:mnahon@ur.com"
+    harsh = "mailto:hsurve@ur.com"
+    st.write("Feel free to reach out to our team:" " [Harsh Surve](%s),"%harsh,"[Zach Chan](%s)"%zach,"and [Michel Nahon](%s)"%michel )
     # WORK DONE
     st.write('**General Use Tools**')
-    st.write('  The Performance Analytics department maintains and provides general use AI tools which you can use and access by clicking the image below.')
+    st.write('The Performance Analytics department maintains and provides **secure and private** general use AI tools which you can use and access by clicking the image below.')
     # COMMENT/ FEEDBACK
 
     # SELF SERVICE SECURE GPT

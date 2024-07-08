@@ -14,6 +14,9 @@ import boto3
 import os
 from dotenv import load_dotenv
 from harsh import *
+from help_desk import *
+from pca import *
+from sales import *
 
 
 
@@ -23,25 +26,7 @@ st.set_page_config(layout='wide')
 
 # Define page functions
 
-def sales():
-    st.markdown("<h1 style='text-align: center; color: Black;'>Sales</h1>", unsafe_allow_html=True)
-    st.markdown("<h1 style='text-align: left; color: Black;'>Project Overview: Speak the Order – OSR Form Filler</h1>", unsafe_allow_html=True)
 
-    st.write("""Idea:
-- Develop an AI-driven system to converse between outside sales representatives (OSR) to enable quicker access to internal data
-- Collect information needed for a reservation as the employee converses naturally with a bot
-- Ability to create a draft order into an employee’s UR Max account
-
-Technologies:
-- Natural Language Processing (NLP): Utilize NLP techniques to process and understand unstructured text data from employee interactions
-- Generative AI (Gen AI): Employ state-of-the-art large language models (LLMs) to generate human-like responses and content based on employee inputs
-- Cloud Computing: Leverage elastic compute systems to deploy the tool for users to access
-""")
-
-    st.write('**Demo**')
-    st.video('speak_the_order.mp4')
-    url = "https://voiceorder.ur.com"
-    st.write("Access to the tool can be found [here](%s)" % url)
 
 def telematics():
     st.markdown("<h1 style='text-align: center; color: Black;'>Service</h1>", unsafe_allow_html=True)
@@ -98,7 +83,7 @@ def display_footnote():
 
 
 # Define the sidebar navigation
-navigation = st.sidebar.radio("Select from the following:", ["Main", "Sales","Service"])#, "Telematics", "Who We Are"])
+navigation = st.sidebar.radio("Select from the following:", ["Main", "Sales","Service","Help Desk","Post Call Analytics"])#, "Telematics", "Who We Are"])
 
 
 # Display the landing page or the selected page
@@ -148,10 +133,10 @@ elif navigation == "Service":
 elif navigation == "Sales":
     sales()
     display_footnote()
-elif navigation == "Telematics":
-    telematics()
+elif navigation == "Help Desk":
+    help_desk()
     display_footnote()
-elif navigation == "Who We Are":
-    who()
+elif navigation == "Post Call Analytics":
+    pca()
     display_footnote()
 #POC TAB WITH PASSWORD

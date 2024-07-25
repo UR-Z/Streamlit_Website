@@ -17,6 +17,8 @@ from harsh import *
 from help_desk import *
 from pca import *
 from sales import *
+from examples import *
+from asg_help_desk import *
 
 
 
@@ -83,7 +85,7 @@ def display_footnote():
 
 
 # Define the sidebar navigation
-navigation = st.sidebar.radio("Select from the following:", ["Main", "Sales","Service","Help Desk","Post Call Analytics"])#, "Telematics", "Who We Are"])
+navigation = st.sidebar.radio("Select from the following:", ["Main", "ASG/Telematics Help Desk","Everyday AI","Sales","Service","Help Desk","Post Call Analytics"])#, "Telematics", "Who We Are"])
 
 
 # Display the landing page or the selected page
@@ -138,5 +140,11 @@ elif navigation == "Help Desk":
     display_footnote()
 elif navigation == "Post Call Analytics":
     pca()
+    display_footnote()
+elif navigation == "Everyday AI":
+    examples()
+    display_footnote()
+elif navigation == "ASG/Telematics Help Desk":
+    asg_help_desk()
     display_footnote()
 #POC TAB WITH PASSWORD

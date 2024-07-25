@@ -5,3 +5,4 @@ streamlit
 python-dotenv
 boto3
 python-docx
+streamlit-scrollable-textbox

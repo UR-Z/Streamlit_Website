@@ -39,7 +39,7 @@ In a business context, RAG can be a powerful tool for various applications, such
         st.markdown("<h1 style='text-align: left; color: Black;'>HR Help Desk</h1>", unsafe_allow_html=True)
         st.write('Collection of PPBs related to HR')
         st.write('Example Question: what are the biweekly contributions for anthem plan?')
-        if hr:=st.chat_input('Here',key='hr'):
+        if hr:=st.chat_input('Enter your question here',key='hr'):
             with st.spinner('Thinking...'):
                 prompt_id = '673f0900-fbb4-441c-a4f9-861b727feb42'
                 body = json.dumps({"search": hr,"promptId":prompt_id})
@@ -51,7 +51,7 @@ In a business context, RAG can be a powerful tool for various applications, such
         st.markdown("<h1 style='text-align: left; color: Black;'>IT Help Desk</h1>", unsafe_allow_html=True)
         st.write('Collection of troubleshooting documentation related to: password, iPad, hardware, printers, software, rentalman and wifi')
         st.write('Example Question: How to reset password?')
-        if it:=st.chat_input('Here',key='it'):
+        if it:=st.chat_input('Enter your question here',key='it'):
             with st.spinner('Thinking...'):
                 prompt_id = '91758c11-58c1-4442-8ae1-baf9377f9185'
                 body = json.dumps({"search": it,"promptId":prompt_id})
@@ -63,7 +63,7 @@ In a business context, RAG can be a powerful tool for various applications, such
         st.markdown("<h1 style='text-align: left; color: Black;'>Telematics Help Desk</h1>", unsafe_allow_html=True)
         st.write('Small collection of documents related to telematics')
         st.write('Example Question: How do i marry a sim and an equipment?')
-        if tel:=st.chat_input('Here',key='tel'):
+        if tel:=st.chat_input('Enter your question here',key='tel'):
             with st.spinner('Thinking...'):
                 prompt_id = '3768e3b8-3310-424b-aafe-04459f3791f5'
                 body = json.dumps({"search": tel,"promptId":prompt_id})

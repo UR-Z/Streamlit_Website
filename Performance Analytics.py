@@ -19,6 +19,11 @@ from pca import *
 from sales import *
 from examples import *
 from asg_help_desk import *
+from ASG import ASG
+from HR import HR
+
+#st.set_option('deprecation.showfileUploaderEncoding', False)
+#st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
 
@@ -85,8 +90,8 @@ def display_footnote():
 
 
 # Define the sidebar navigation
-navigation = st.sidebar.radio("Select from the following:", ["Main", "ASG/Telematics Help Desk","Everyday AI","Sales","Service","Help Desk","Post Call Analytics"])#, "Telematics", "Who We Are"])
-
+navigation = st.sidebar.radio("Select from the following:",
+["Main", "ASG", "1HR", "Everyday AI","Sales","Service","Post Call Analytics","ASG/Telematics Help Desk","Help Desk"])#, "Telematics", "Who We Are"])
 
 # Display the landing page or the selected page
 if navigation == "Main":
@@ -102,14 +107,20 @@ if navigation == "Main":
     
     # INTRO
     st.write('**Intro**')
-    st.write(""" The Performance Analytics department is at the forefront of driving digital innovation within our organization. Our team specializes in leveraging advanced analytics and cutting-edge generative AI technologies to uncover valuable insights and create transformative solutions.
+    st.write("""This site has been built to show some of the capabilities of Gen AI. 
 
-By harnessing the power of data and AI, the Performance Analytics department empowers the organization to make informed, data-driven decisions, helping us stay ahead in an increasingly competitive landscape. Our expertise in advanced analytics allows us to identify patterns, predict trends, and optimize processes, leading to improved efficiency and performance across various business functions.
+On the left side you can select tabs with examples and opportunities to try the tools yourself.
 
-In addition to our analytics capabilities, we support internal users with their analytic work and tools such as Excel and Tableau. We are happy to provide training to help improve skills and automate tasks, ensuring our team can work more efficiently and effectively.
+You can find examples related to: 
+<ul>
+    <li>Telematics</li>
+    <li>Sales</li>
+    <li>Service</li>
+    <li>IT</li>
+    <li>HR</li>
+</ul>
 
-On the bottom of this page you can try our secure and private LLM running on AWS Bedrock. On the left you can see some demos of current and pasts projects.
-""")
+""",unsafe_allow_html=True)
     zach = "mailto:zchan@ur.com"
     michel = "mailto:mnahon@ur.com"
     harsh = "mailto:hsurve@ur.com"
@@ -128,6 +139,12 @@ On the bottom of this page you can try our secure and private LLM running on AWS
         ),
         unsafe_allow_html=True,
     )
+    display_footnote()
+elif navigation == "ASG":
+    ASG()
+    display_footnote()
+elif navigation == "1HR":
+    HR()
     display_footnote()
 elif navigation == "Service":
     service()

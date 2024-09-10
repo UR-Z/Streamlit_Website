@@ -1,7 +1,7 @@
 import streamlit as st
 
 def service():
-    st.markdown("<h1 style='text-align: center; color: Black;'>Service & Maintainence</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: Black;'>Service & Maintenance</h1>", unsafe_allow_html=True)
 
     col1,col2 = st.columns(2)
     with col1:

@@ -20,4 +20,4 @@ Technologies:
     
         
     with col2:
-        st.video('speak_the_order.mp4')
+        st.video('media/speak_the_order.mp4')

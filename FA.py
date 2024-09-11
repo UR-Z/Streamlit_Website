@@ -2,24 +2,24 @@ import streamlit as st
 from streamlit_chat import message
 from rag_functions import *
 
-def ASG():
+def FA():
     #st.set_page_config(layout='wide')
 
-    if "client" not in st.session_state or "prompt_id" != '3768e3b8-3310-424b-aafe-04459f3791f5':
+    if "client" not in st.session_state or "prompt_id" != '522aeebf-7d24-4cf8-995b-087fe410e863':
         st.session_state.URL,st.session_state.headers = init_client()
-        st.session_state.prompt_id = '3768e3b8-3310-424b-aafe-04459f3791f5'
-        st.session_state.model_name = 'Telematics Help'
+        st.session_state.prompt_id = '522aeebf-7d24-4cf8-995b-087fe410e863'
+        st.session_state.model_name = 'Branch Manager'
         st.session_state.question = 'init'
         st.session_state.answer = 'init'
         st.session_state.source = 'init'
         st.session_state.client = 'init'
         
 
-    st.markdown("<h1 style='text-align: center; color: Black;'>ASG Help Desk</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: Black;'>Fleet Assistance Help Desk</h1>", unsafe_allow_html=True)
     st.write("""
-    This tool is designed to help answer questions related to ASG. To get started ask the tool a question below.
+    This tool is designed to help answer questions related to Fleet Assistance. To get started ask the tool a question below.
 
-    Example Question: How do i marry a telematics device to a piece of equipment?""")
+    Example Question: What is the rentalman code to add a reservation?""")
 
 
     with st.sidebar:

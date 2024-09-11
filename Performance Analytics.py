@@ -14,13 +14,17 @@ import boto3
 import os
 from dotenv import load_dotenv
 from harsh import *
-from help_desk import *
 from pca import *
 from sales import *
 from examples import *
-from asg_help_desk import *
 from ASG import ASG
 from HR import HR
+from IT import IT
+from FA import FA
+from PPB import PPB
+from RFP import RFP
+from Tools import Tools
+from Ping import *
 
 #st.set_option('deprecation.showfileUploaderEncoding', False)
 #st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -32,12 +36,6 @@ load_dotenv('../env.env')
 st.set_page_config(layout='wide')
 
 # Define page functions
-
-
-
-def telematics():
-    st.markdown("<h1 style='text-align: center; color: Black;'>Service</h1>", unsafe_allow_html=True)
-    
 def who():
     col1, col2, col3 = st.columns(3)
 
@@ -91,14 +89,16 @@ def display_footnote():
 
 # Define the sidebar navigation
 navigation = st.sidebar.radio("Select from the following:",
-["Main", "ASG", "1HR", "Everyday AI","Sales","Service","Post Call Analytics","ASG/Telematics Help Desk","Help Desk"])#, "Telematics", "Who We Are"])
+["Main", "ASG Help Desk", "1HR Help Desk", "IT Help Desk","Fleet Assistance Help Desk",
+"PPB Help Desk", "RFP Help Desk","Tools Help Desk","Ping",
+"Everyday AI","Sales","Service","Post Call Analytics"])#, "Telematics", "Who We Are"])
 
 # Display the landing page or the selected page
 if navigation == "Main":
     col1, col2 = st.columns([1, 3])
 
     with col1:
-        st.image("UR_Logo.jpg", width=200)
+        st.image("media/UR_Logo.jpg", width=200)
 
     with col2:
         st.subheader("Performance Analytics", anchor=False, divider='blue')
@@ -135,25 +135,42 @@ You can find examples related to:
         """<a href="http://10.20.129.216:8502/">
         <img src="data:image/png;base64,{}" width="150">
         </a>""".format(
-            base64.b64encode(open("click.png", "rb").read()).decode()
+            base64.b64encode(open("media/click.png", "rb").read()).decode()
         ),
         unsafe_allow_html=True,
     )
     display_footnote()
-elif navigation == "ASG":
+elif navigation == "ASG Help Desk":
     ASG()
     display_footnote()
-elif navigation == "1HR":
+elif navigation == "1HR Help Desk":
     HR()
     display_footnote()
+elif navigation == "IT Help Desk":
+    IT()
+    display_footnote()
+elif navigation == "Fleet Assistance Help Desk":
+    FA()
+    display_footnote()
+elif navigation == "PPB Help Desk":
+    PPB()
+    display_footnote()
+elif navigation == "RFP Help Desk":
+    RFP()
+    display_footnote()
+elif navigation == "Tools Help Desk":
+    Tools()
+    display_footnote()
+elif navigation == "Ping":
+    Ping()
+    display_footnote()
+
+
 elif navigation == "Service":
     service()
     display_footnote()
 elif navigation == "Sales":
     sales()
-    display_footnote()
-elif navigation == "Help Desk":
-    help_desk()
     display_footnote()
 elif navigation == "Post Call Analytics":
     pca()
@@ -161,7 +178,3 @@ elif navigation == "Post Call Analytics":
 elif navigation == "Everyday AI":
     examples()
     display_footnote()
-elif navigation == "ASG/Telematics Help Desk":
-    asg_help_desk()
-    display_footnote()
-#POC TAB WITH PASSWORD

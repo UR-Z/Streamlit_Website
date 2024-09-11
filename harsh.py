@@ -24,7 +24,7 @@ def service():
             Gone are the days of waiting in line at the OEM hotline. Simply enter the Equipment Code and the assistant is ready to serve you right away! """)
 
     with col2:
-        st.video('UR Manual Assist Demo.mp4')
+        st.video('media/UR Manual Assist Demo.mp4')
         st.markdown('**Demo Instructions**')
         st.write("""
                 Try it Your Self - 
